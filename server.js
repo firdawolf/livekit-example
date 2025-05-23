@@ -12,10 +12,11 @@ const dirname = path.dirname(filename);
 const createToken = async () => {
   // if this room doesn't exist, it'll be automatically created when the first
   // client joins
+  const random = Math.floor(Math.random() * 10000);
   const roomName = "room1";
   // identifier to be used for participant.
   // it's available as LocalParticipant.identity with livekit-client SDK
-  const participantName = "User1";
+  const participantName = "User" + random.toString;
 
   const at = new AccessToken(
     process.env.LIVEKIT_API_KEY,
